@@ -701,7 +701,7 @@ export class MysqlDriver implements Driver {
                 || tableColumn.type !== this.normalizeType(columnMetadata)
                 || tableColumn.length !== columnMetadata.length
                 || tableColumn.width !== columnMetadata.width
-                || tableColumn.precision !== columnMetadata.precision
+                || (columnMetadata.precision && tableColumn.precision !== columnMetadata.precision)
                 || tableColumn.scale !== columnMetadata.scale
                 || tableColumn.zerofill !== columnMetadata.zerofill
                 || tableColumn.unsigned !== columnMetadata.unsigned
